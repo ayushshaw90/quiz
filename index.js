@@ -2,7 +2,7 @@ const express = require('express');
 const path=require('path')
 let question = require(path.join(__dirname,'questions.js'))
 const res = require('express/lib/response');
-let answers = ['a', 'b', 'c', 'a', 'c', 'a', 'd', 'a', 'b', 'd', 'b', 'c', 'd', 'a', 'd']
+let answers = ['d', 'b', 'c', 'a', 'c', 'a', 'd', 'a', 'b', 'd', 'b', 'c', 'd', 'a', 'd']
 const app = express()
 app.use('/static', express.static('public'))
 app.use(express.json())
