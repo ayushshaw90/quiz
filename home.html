@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <div class="flex justify-center py-4 w-fit mx-auto bg-gray-300 px-4 mt-2 rounded-lg border-indigo-500 border-b-4">
+            <img src="static/quiz.png" alt="" class="pr-4">
+            <div class="text-2xl">
+                Quiz
+            </div>
+        </div>
+        
+    </header>
+    <br>
+    <div class="mx-2 md:mx-0 " id="content">
+        <div class="w-full md:w-2/3 lg:w-1/2 mx-auto md:border-x-8 md:border-indigo-500 rounded-lg bg-gray-200">
+            <div class="md:flex">
+                <div class="py-6 px-4 text-xl bg-indigo-500 text-white rounded md:rounded-none whitespace-nowrap " id="qn">
+                    Question 1</div>
+                <div class="text-lg py-6 px-4 bg-gray-200" id="qs">Lorem ipsum dolor sit amet consectetur?</div>
+            </div>
+        </div>
+        <br>
+        <div class="w-full md:w-2/3 lg:w-1/2 mx-auto bg-gray-200 rounded-lg px-6 py-6">
+            <form action="" id="question-form">
+                <div class="py-4 bg-gray-100 my-10 border-gray-400 px-2 rounded-md" id="A-div">
+                    <input type="radio" name="answer" id="A" value="a">
+                    <label for="A" class="pl-2" id="ql-a">A) Lorem, ipsum.</label>
+                </div>
+                <div class="py-4 bg-gray-100 my-10 border-gray-400 px-2 rounded-md" id="B-div">
+                    <input type="radio" name="answer" id="B" value="b">
+                    <label for="B" class="pl-2" id="ql-b">B) Lorem, ipsum.</label>
+                </div>
+                <div class="py-4 bg-gray-100 my-10 border-gray-400 px-2 rounded-md" id="C-div">
+                    <input type="radio" name="answer" id="C" value="c">
+                    <label for="C" class="pl-2" id="ql-c">C) Lorem, ipsum.</label>
+                </div>
+                <div class="py-4 bg-gray-100 my-10 border-gray-400 px-2 rounded-md" id="D-div">
+                    <input type="radio" name="answer" id="D" value="d">
+                    <label for="D" class="pl-2" id="ql-d">D) Lorem, ipsum.</label>
+                </div>
+                <div class="flex justify-between">
+                    <input type="submit" value="Submit"
+                        class="bg-indigo-500 text-white text-xl px-4 py-3 rounded-lg hover:bg-indigo-600 cursor-pointer">
+                    <button id="nextQ" class="bg-gray-500 text-white py-3 px-8 rounded-lg hover:bg-gray-600 cursor-pointer">Next</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br>
+    <footer class="text-gray-600 body-font px-0 md:px-20 ">
+        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+            <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                <img src="/static/quiz.png" alt="">
+                <span class="ml-3 text-xl">Quiz</span>
+            </a>
+            <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">©
+                2022 Ayush Shaw —
+                <a href="https://github.com/ayushshaw90" class="text-gray-600 ml-1" rel="noopener noreferrer"
+                    target="_blank">@ayushshaw90</a>
+            </p>
+            <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+                <a class="text-gray-500">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        class="w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        class="w-5 h-5" viewBox="0 0 24 24">
+                        <path
+                            d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                        </path>
+                    </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                    </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path stroke="none"
+                            d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+                        </path>
+                        <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                    </svg>
+                </a>
+            </span>
+        </div>
+    </footer>
+</body>
+<script>
+    let pset = new Set();
+    let points=0
+    let qs=document.getElementById("qs");
+    let qn=document.getElementById('qn');
+    let qla=document.getElementById('ql-a');
+    let qlb=document.getElementById('ql-b');
+    let qlc=document.getElementById('ql-c');
+    let qld=document.getElementById('ql-d');
+    
+    let a=document.getElementById("A-div");
+    let b=document.getElementById("B-div");
+    let c=document.getElementById("C-div");
+    let d=document.getElementById("D-div");
+    let correct=false;
+
+
+    let nextQuest = document.getElementById('nextQ')
+
+    // let submitted=false;
+    let questionForm = document.getElementById("question-form")
+    let qno = 1;
+    let height = screen.height - 250;
+    let content = document.getElementById("content");
+    content.style.minHeight = `${height}px`;
+    window.addEventListener("resize", () => {
+        height = screen.height - 250;
+        content.style.minHeight = `${height}px`;
+    })
+    
+    function isCorrect(option){
+        let temp;
+        if(option == 'a'){
+            temp=a;
+        }else if(option == 'b'){
+            temp=b;
+        }else if(option == 'c'){
+            temp=c;
+        }else{
+            temp=d;
+        }
+        if(correct){
+            temp.classList.add('border-b-4', 'border-green-500')
+        }else
+        temp.classList.add('border-b-4', 'border-red-500')
+    }
+    function clearAnswer(){
+        correct=false;
+        a.classList.remove('border-b-4', 'border-green-500', 'border-red-500')
+        b.classList.remove('border-b-4', 'border-green-500', 'border-red-500')
+        c.classList.remove('border-b-4', 'border-green-500', 'border-red-500')
+        d.classList.remove('border-b-4', 'border-green-500', 'border-red-500')
+    }
+    questionForm.addEventListener('submit', (e)=>{
+        e.preventDefault()
+        if(e.submitter == nextQuest) return;
+        
+        let op = document.querySelector('input[name="answer"]:checked')
+        let ans=null;
+        if(op==null){
+            alert('Choose an option')
+        }else{
+            clearAnswer()
+            ans=op.value;
+            async function check(){
+                let object = {answer: `${ans}`}
+                let res = await fetch(
+                    url=`/question/${qno-1}`, 
+                    data = {
+                        method:'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(object)}
+                )
+                let json = await res.json();
+                if(json['evaluation']=='correct'){
+                    correct=true;
+                    pset.add(qno);
+                }else{
+                    correct=false;
+                }
+                
+            }
+            check().then(()=>{
+                isCorrect(ans)
+            })
+        }
+    })
+    async function renderQuestions(qnum){
+        let res = await fetch(`/getQ/${qnum-1}`);
+        let data = await res.json()
+        
+        qn.innerText=`Question ${qnum}`;
+        qs.innerText = data['question'];
+        qla.innerText= "A) "+data['A'];
+        qlb.innerText= "B) "+data['B'];
+        qlc.innerText= "C) "+data['C'];
+        qld.innerText= "D) "+data['D'];
+        // console.log('loaded')
+        clearAnswer();
+    }
+    function nxt(){
+        // console.log("[+] Next pressed")
+        if(correct){
+            qno++;
+            renderQuestions(qno).then(()=>{return}).catch((e)=>{
+                console.log(e)
+            })
+        }else{
+            alert('first answer this question correctly')
+        }
+    }
+    nextQuest.addEventListener('click',nxt)
+    window.addEventListener("load", (e)=>{
+        qno=1;
+        renderQuestions(qno).then(()=>1).catch((e)=>{
+            console.log(e)
+        })
+    })
+</script>
+
+</html>
