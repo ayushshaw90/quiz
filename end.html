@@ -100,7 +100,7 @@
         let myInterval = setInterval(()=>{
             displayScore.innerText= `Your score is ${i}`;
             i++;
-            if(i>=score){
+            if(i>score){
                 clearInterval(myInterval)
             }
         }, 100)
