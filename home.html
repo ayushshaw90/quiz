@@ -124,12 +124,12 @@
 
     // let submitted=false;
     let questionForm = document.getElementById("question-form")
-    let qno = 1;
-    let height = screen.height - 250;
+    let qno = 0;
+    let height = screen.height - 210;
     let content = document.getElementById("content");
     content.style.minHeight = `${height}px`;
     window.addEventListener("resize", () => {
-        height = screen.height - 250;
+        height = screen.height - 210;
         content.style.minHeight = `${height}px`;
     })
     
@@ -145,9 +145,17 @@
             temp=d;
         }
         if(correct){
+            if(!(localStorage.getItem(`${qno}`)=="false")){
+
+                localStorage.setItem(`${qno}`, "true")
+            }
             temp.classList.add('border-b-4', 'border-green-500')
-        }else
-        temp.classList.add('border-b-4', 'border-red-500')
+        }else{
+            if(!(localStorage.getItem(`${qno}`)=="true")){
+                localStorage.setItem(`${qno}`, "false")
+            }
+            temp.classList.add('border-b-4', 'border-red-500')
+        }
     }
     function clearAnswer(){
         correct=false;
@@ -155,6 +163,15 @@
         b.classList.remove('border-b-4', 'border-green-500', 'border-red-500')
         c.classList.remove('border-b-4', 'border-green-500', 'border-red-500')
         d.classList.remove('border-b-4', 'border-green-500', 'border-red-500')
+    }
+    function lastQ(){
+        if(qno==15){
+            nextQuest.innerText="End";
+            nextQuest.removeEventListener('click');
+            nextQuest.addEventListener('click', ()=>{
+                window.location.href='/end'
+            })
+        }
     }
     questionForm.addEventListener('submit', (e)=>{
         e.preventDefault()
@@ -194,6 +211,8 @@
         }
     })
     async function renderQuestions(qnum){
+        qno++;
+        qnum++;
         let res = await fetch(`/getQ/${qnum-1}`);
         let data = await res.json()
         
@@ -208,9 +227,16 @@
     }
     function nxt(){
         // console.log("[+] Next pressed")
+        if(qno>=15){
+            window.location.href="/end";
+            return;
+        }
         if(correct){
-            qno++;
-            renderQuestions(qno).then(()=>{return}).catch((e)=>{
+            renderQuestions(qno).then(()=>{
+                lastQ();
+                let op = document.querySelector('input[name="answer"]:checked')
+                op.checked=false;
+            }).catch((e)=>{
                 console.log(e)
             })
         }else{
@@ -219,8 +245,8 @@
     }
     nextQuest.addEventListener('click',nxt)
     window.addEventListener("load", (e)=>{
-        qno=1;
-        renderQuestions(qno).then(()=>1).catch((e)=>{
+        qno=0;
+        renderQuestions(qno).then(()=>{return}).catch((e)=>{
             console.log(e)
         })
     })

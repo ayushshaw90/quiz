@@ -9,7 +9,13 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res)=>{
+    res.sendFile(path.join(__dirname,'welcome.html'))
+})
+app.get('/quiz',(req, res)=>{
     res.sendFile(path.join(__dirname,'home.html'))
+})
+app.get('/end', (req,res)=>{
+    res.sendFile(path.join(__dirname,'end.html'))
 })
 app.post('/question/:qid', (req, res) => {
     try {
