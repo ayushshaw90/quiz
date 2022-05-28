@@ -58,6 +58,7 @@ app.all("*",(req, res)=>{
     res.status(404).send(JSON.stringify({"evaluation": "undefined"}))
     res.end()
 })
-app.listen(3000, () => {
-    console.log('App running in localhost 3000')
+const PORT = process.env.PORT || 8080
+app.listen(PORT, () => {
+    console.log('App running in port 8080')
 })
