@@ -88,11 +88,11 @@
     </footer>
 </body>
 <script>
-    let height = screen.height - 210;
+    let height = window.innerHeight - 210;
     let content = document.getElementById("content");
     content.style.minHeight = `${height}px`;
     window.addEventListener("resize", () => {
-        height = screen.height - 210;
+        height = window.innerHeight - 210;
         content.style.minHeight = `${height}px`;
     })
 

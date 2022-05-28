@@ -23,7 +23,7 @@
     </header>
     <br>
     <div class="text-gray-600 body-font" id="content">
-        <h1 class="text-center text-7xl text-white bg-indigo-500 w-fit mx-auto px-6 py-4 my-4 rounded-md">Thank You</h1>
+        <h1 class="text-center text-4xl md:text-7xl text-white bg-indigo-500 w-fit mx-auto px-6 py-4 my-4 rounded-md">Thank You</h1>
         <h2 class="text-center text-lg text-gray-400">Quiz ended</h2>
         <div class="text-center w-fit mx-auto text-2xl">
             We hope this quiz experience was good.
@@ -79,11 +79,19 @@
     </footer>
 </body>
 <script>
-    let height = screen.height - 220;
+    let height = window.innerHeight;
+    if(window.innerWidth<500){
+        height-=70;
+    }
+    height-=220
     let content = document.getElementById("content");
     content.style.minHeight = `${height}px`;
     window.addEventListener("resize", () => {
-        height = screen.height - 220;
+        height = screen.height;
+        if(window.innerWidth<500){
+        height-=70;
+    }
+    height-=220
         content.style.minHeight = `${height}px`;
     })
 
@@ -109,11 +117,7 @@
     window.addEventListener('load',()=>{
         animateScore().then(null);
     })
-    function devTest(){
-        for(let i=0;i<15;i++){
-            localStorage.setItem(`${i+1}`, "true")
-        }
-    }
+    
 </script>
 
 </html>
